@@ -7,14 +7,12 @@ const Variable = "Variable";
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<p
-			aria-label="esto es un aria label random"
-			class="esto es una clase realmente larga para ver como se comporta el linter si me lo coloca bien o no, vamos a ver que sucede, aver si sigue funcionando bien">
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non hic beatae
-			provident esse saepe officiis quas nam explicabo aspernatur quasi, error
-			quibusdam consectetur eligendi nihil itaque vero in? Similique, vitae.
+		<p>
+
+
+
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quod quo incidunt nostrum temporibus nemo labore voluptatum! Ut quod odit doloribus veniam? Magnam dolores perferendis eum odit id quidem sit.
 		</p>
-		<p>hola mundo</p>
 		<h1>
 			Welcome to
 			<span
@@ -101,9 +99,10 @@ const Variable = "Variable";
 </style>
 
 <script>
-	const Suma = (value: number) => {
-		if (value < 0) {
-			console.log("funciona");
-		}
-	};
+	function suma(a: number, b: number): number {		
+		return a + b;
+	}
+	function multiplication(a: number, b: number): number {
+		return a * b;
+	} 
 </script>

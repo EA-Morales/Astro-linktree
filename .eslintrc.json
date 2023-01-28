@@ -1,13 +1,12 @@
 {
     "extends": [
         "plugin:astro/recommended",
-        "prettier",
+        "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended"
     ],
     "plugins": [
         "prettier"
     ],
-    "parser": "@typescript-eslint/parser",
     "overrides": [
         {
             "files": [
@@ -22,8 +21,20 @@
             },
             "rules": {
                 "no-unused-vars": "warn",
+                "no-undef": "error",
                 "no-multiple-empty-lines": "off",
-                "prettier/prettier": "error",
+                "prettier/prettier": [
+                    "off",
+                    {
+                        "useTabs": true,
+                        "singleQuote": false,
+                        "jsxSingleQuote": false,
+                        "bracketSameLine": true,
+                        "arrowParens": "always",
+                        "endOfLine": "auto",
+                        "singleAttributePerLine": true // Enforce single attribute per line in HTML, Vue and JSX.
+                    }
+                ],
                 "arrow-body-style": "off",
                 "prefer-arrow-callback": "off",
                 "astro/no-set-html-directive": "error"
