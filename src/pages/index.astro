@@ -1,10 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+
+const Variable = "Variable";
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
+		<p
+			aria-label="esto es un aria label random"
+			class="esto es una clase realmente larga para ver como se comporta el linter si me lo coloca bien o no, vamos a ver que sucede, aver si sigue funcionando bien">
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non hic beatae
+			provident esse saepe officiis quas nam explicabo aspernatur quasi, error
+			quibusdam consectetur eligendi nihil itaque vero in? Similique, vitae.
+		</p>
 		<p>hola mundo</p>
 		<h1>
 			Welcome to
@@ -90,3 +99,7 @@ import Card from "../components/Card.astro";
 		padding: 0;
 	}
 </style>
+
+<script>
+	console.log("hola mundo");
+</script>
