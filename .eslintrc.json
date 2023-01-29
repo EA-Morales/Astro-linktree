@@ -24,11 +24,11 @@
                 "no-undef": "error",
                 "no-multiple-empty-lines": "off",
                 "prettier/prettier": [
-                    "off",
+                    "warn",
                     {
                         "useTabs": true,
-                        "singleQuote": false,
-                        "jsxSingleQuote": false,
+                        "singleQuote": true,
+                        "jsxSingleQuote": true,
                         "bracketSameLine": true,
                         "arrowParens": "always",
                         "endOfLine": "auto",
