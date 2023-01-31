@@ -2,9 +2,11 @@
     "extends": [
         "plugin:astro/recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:tailwindcss/recommended",
         "plugin:prettier/recommended"
     ],
     "plugins": [
+        "tailwindcss",
         "prettier"
     ],
     "overrides": [
@@ -23,8 +25,9 @@
                 "no-unused-vars": "warn",
                 "no-undef": "error",
                 "no-multiple-empty-lines": "off",
+                "tailwindcss/no-custom-classname": "off", // disable warning when using custom classes
                 "prettier/prettier": [
-                    "warn",
+                    "error",
                     {
                         "useTabs": true,
                         "singleQuote": true,

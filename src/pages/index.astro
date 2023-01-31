@@ -7,11 +7,11 @@ const Variable = 'Variable';
 
 <Layout title='Welcome to Astro.'>
 	<main>
-		<h1>
+		<h1 class='font-bold text-red-500'>
 			Welcome to
 			<span
-				accesskey='asdasd'
-				class='text-gradient text-red-500 font-bold font-semibold text-indigo-899 una-class-que-se-me-ocurre-aleatoriamente oeasedasd aweasdasda aweasdasda qweadsasd qweaweasdasd'>
+				accesskey=''
+				class=''>
 				Astro
 			</span>
 		</h1>
@@ -46,58 +46,3 @@ const Variable = 'Variable';
 		</ul>
 	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
-
-<script>
-	function suma(a: number, b: number): number {
-		return a + b;
-	}
-
-	function multiplication(a: number, b: number): number {
-		return a * b;
-	}
-</script>
