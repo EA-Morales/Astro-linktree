@@ -1,0 +1,22 @@
+---
+export interface Props {
+	title: string;
+	icon: string;
+	href: string;
+}
+
+const { title, icon, href } = Astro.props;
+---
+
+<li class='w-full'>
+	<a
+		class='flex justify-between gap-4'
+		href={href}>
+		<img
+			width='24'
+			src={icon}
+			alt=''
+		/>
+		{title}
+	</a>
+</li>

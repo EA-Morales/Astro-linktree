@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Mi sitio web",
+      "icon": "src/assets/icons/Github.svg",
+      "url": "https://www.misitioweb.com"
+    },
+    {
+      "title": "Mi perfil de Instagram",
+      "icon": "src/assets/icons/Github.svg",
+      "url": "https://www.instagram.com/miperfil"
+    },
+    {
+      "title": "Mi página de LinkedIn",
+      "icon": "src/assets/icons/Github.svg",
+      "url": "https://www.linkedin.com/miperfil"
+    }
+  ]

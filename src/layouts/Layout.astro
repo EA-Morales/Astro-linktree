@@ -3,26 +3,26 @@ export interface Props {
 	title: string;
 }
 
-import '../utils/base.css'
+import '../utils/base.css';
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset='UTF-8' />
 		<meta
-			name="viewport"
-			content="width=device-width"
+			name='viewport'
+			content='width=device-width'
 		/>
 		<link
-			rel="icon"
-			type="image/svg+xml"
-			href="/favicon.svg"
+			rel='icon'
+			type='image/svg+xml'
+			href='/favicon.svg'
 		/>
 		<meta
-			name="generator"
+			name='generator'
 			content={Astro.generator}
 		/>
 		<title>{title}</title>
