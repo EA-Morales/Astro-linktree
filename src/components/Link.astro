@@ -3,20 +3,32 @@ export interface Props {
 	title: string;
 	icon: string;
 	href: string;
+	share: string;
 }
 
-const { title, icon, href } = Astro.props;
+const { title, icon, href, share } = Astro.props;
 ---
 
-<li class='w-full'>
+<li
+	class='group w-full rounded-md bg-pink-100 hover:scale-105 hover:transition hover:duration-700 hover:ease-in-out'>
 	<a
-		class='flex justify-between gap-4'
+		class='grid w-full grid-cols-5'
 		href={href}>
 		<img
 			width='24'
 			src={icon}
-			alt=''
+			class='place-self-center justify-self-center'
 		/>
-		{title}
+		<p class='col-span-3 py-4 text-center'>
+			{title}
+		</p>
+		<button
+			class='flex h-10 w-10 items-center justify-center place-self-center justify-self-center rounded-full p-2 hover:bg-slate-300'>
+			<img
+				width='14'
+				src={share}
+				class='hidden text-center group-hover:block'
+			/>
+		</button>
 	</a>
 </li>

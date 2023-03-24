@@ -1,17 +1,20 @@
 [
     {
-      "title": "Mi sitio web",
+      "title": "Portfolio",
       "icon": "src/assets/icons/Github.svg",
-      "url": "https://www.misitioweb.com"
+      "url": "#",
+      "share": "src/assets/icons/Share.svg"
     },
     {
-      "title": "Mi perfil de Instagram",
+      "title": "Github",
       "icon": "src/assets/icons/Github.svg",
-      "url": "https://www.instagram.com/miperfil"
+      "url": "#",
+      "share": "src/assets/icons/Share.svg"
     },
     {
-      "title": "Mi página de LinkedIn",
+      "title": "Linkedin",
       "icon": "src/assets/icons/Github.svg",
-      "url": "https://www.linkedin.com/miperfil"
+      "url": "#",
+      "share": "src/assets/icons/Share.svg"
     }
   ]
