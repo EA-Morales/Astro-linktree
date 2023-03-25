@@ -7,3 +7,9 @@
 body  {
     font-family: Inter;
 }
+
+@layer components {
+    .nav-visible {
+      @apply rounded-[72px] border border-white bg-white/10 backdrop-blur-md z-10;
+    }
+  }
