@@ -10,6 +10,6 @@ body  {
 
 @layer components {
     .nav-visible {
-      @apply rounded-[72px] border border-white bg-white/10 backdrop-blur-md z-10;
+      @apply rounded-[72px] border border-[#EBEEF1] bg-white/50 backdrop-blur-md z-10;
     }
   }
