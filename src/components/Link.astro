@@ -23,7 +23,8 @@ const { title, icon, href, share } = Astro.props;
 			{title}
 		</p>
 		<button
-			class='flex h-10 w-10 items-center justify-center place-self-center justify-self-center rounded-full p-2 hover:bg-[#dad9d8]'>
+			id='link__button'
+			class='link__button flex h-10 w-10 items-center justify-center place-self-center justify-self-center rounded-full p-2 hover:bg-[#dad9d8]'>
 			<img
 				width='14'
 				src={share}
@@ -32,3 +33,13 @@ const { title, icon, href, share } = Astro.props;
 		</button>
 	</a>
 </li>
+
+<script>
+	const link__button = document.getElementsByClassName('link__button');
+
+	for (let i = 0; i < link__button.length; i++) {
+		link__button[i].addEventListener('click', function () {
+			console.log('hola mundo');
+		});
+	}
+</script>

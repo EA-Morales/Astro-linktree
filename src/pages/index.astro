@@ -2,25 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import json from '../assets/Data/Data.json';
 import Link from '../components/Link.astro';
-import avatar from '../assets/Images/avatar.webp';
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
+import Header from '../components/Header.astro';
+import ModalLayout from '../layouts/ModalLayout.astro';
 ---
 
 <Layout title='Agustin Morales'>
 	<Navbar />
 
 	<main class='mb-8 flex w-full flex-col justify-center px-4 pt-16'>
-		<header class='mb-8 flex flex-col items-center'>
-			<img
-				width='96'
-				class='mb-4 rounded-full'
-				src={avatar}
-				alt=''
-			/>
-			<h1 class='text-xl font-bold'>Agustin Morales</h1>
-			<h2 class='font'>Frontend Developer</h2>
-		</header>
+		<Header />
 		<ul class='flex w-full flex-col items-center gap-4'>
 			{
 				json.map((data) => (
@@ -35,15 +27,16 @@ import Navbar from '../components/Navbar.astro';
 		</ul>
 	</main>
 
+	<ModalLayout>hola mundo</ModalLayout>
+
 	<Footer />
 </Layout>
 
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
-		// Obtener el elemento de la barra de menú
-		const parrafo = document.getElementById('2');
-		const image = document.getElementById('1');
 		const navbar = document.getElementById('navbar');
+		const navbar__image = document.getElementById('navbar__image');
+		const navbar__paragraph = document.getElementById('navbar__paragraph');
 
 		// Obtener la posición inicial de la página
 		let startPosition = window.pageYOffset;
@@ -51,26 +44,33 @@ import Navbar from '../components/Navbar.astro';
 		// Agregar un evento de escucha de desplazamiento
 		window.addEventListener('scroll', function () {
 			// Obtener la posición actual de la página
+
 			const currentPosition = window.pageYOffset;
 
-			if (currentPosition === 0) {
-				navbar.classList.remove('nav-visible');
-				navbar.classList.add('border-transparent');
-				image.classList.add('hidden');
-				parrafo.classList.add('hidden');
-			}
+			if (!!navbar && !!navbar__image && !!navbar__paragraph) {
+				if (currentPosition === 0) {
+					navbar.classList.remove('nav-visible');
+					navbar.classList.add('border-transparent');
+					navbar__image.classList.add('hidden');
+					navbar__paragraph.classList.add('hidden');
+				}
 
-			// Verificar si la página se ha desplazado hacia abajo
-			if (currentPosition > startPosition && !!parrafo && !!image) {
-				// Si se ha desplazado hacia abajo, agregar una clase para mostrar la barra de menú
-				navbar.classList.add('nav-visible');
-				navbar.classList.remove('border-transparent');
-				image.classList.remove('hidden');
-				parrafo.classList.remove('hidden');
-			}
+				// Verificar si la página se ha desplazado hacia abajo
+				if (
+					currentPosition > startPosition &&
+					!!navbar__paragraph &&
+					!!navbar__image
+				) {
+					// Si se ha desplazado hacia abajo, agregar una clase para mostrar la barra de menú
+					navbar.classList.add('nav-visible');
+					navbar.classList.remove('border-transparent');
+					navbar__image.classList.remove('hidden');
+					navbar__paragraph.classList.remove('hidden');
+				}
 
-			// Actualizar la posición inicial de la página
-			startPosition = currentPosition;
+				// Actualizar la posición inicial de la página
+				startPosition = currentPosition;
+			}
 		});
 	});
 </script>

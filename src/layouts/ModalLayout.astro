@@ -1,0 +1,12 @@
+<div
+	id='modal__container'
+	class='fixed inset-0 z-10 hidden min-h-screen bg-gray-400/80'>
+	<div class='fixed bottom-0 flex w-full bg-white p-4'>
+		<slot />
+		<button
+			id='button__close__modal'
+			class='absolute top-0 right-0'
+			>X</button
+		>
+	</div>
+</div>

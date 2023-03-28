@@ -12,19 +12,37 @@
     "overrides": [
         {
             "files": [
+                "*.js"
+            ],
+            "rules": {
+                "no-mixed-spaces-and-tabs": [
+                    "error",
+                    "smart-tabs"
+                ]
+            }
+        },
+        {
+            "files": [
                 "*.astro"
             ],
             "parser": "astro-eslint-parser",
             "parserOptions": {
-                "parser": "@typescript-eslint/parser",
+                "parser": [
+                    "@typescript-eslint/parser",
+                    "astro-eslint-parser"
+                ],
                 "extraFileExtensions": [
                     ".astro"
                 ]
             },
             "rules": {
+                "no-mixed-spaces-and-tabs": [
+                    "error",
+                    "smart-tabs"
+                ],
                 "no-unused-vars": "warn",
-                "no-undef": "error",
-                "no-multiple-empty-lines": "off",
+                "no-undef": "off",
+                "no-multiple-empty-lines": "error",
                 "tailwindcss/no-custom-classname": "off", // disable warning when using custom classes
                 "prettier/prettier": [
                     "error",
@@ -41,6 +59,48 @@
                 "arrow-body-style": "off",
                 "prefer-arrow-callback": "off",
                 "astro/no-set-html-directive": "error"
+            }
+        },
+        {
+            "files": [
+                "*.ts"
+            ],
+            "parser": "@typescript-eslint/parser",
+            "extends": [
+                "plugin:@typescript-eslint/recommended"
+            ],
+            "rules": {
+                "@typescript-eslint/no-unused-vars": [
+                    "error",
+                    {
+                        "argsIgnorePattern": "^_",
+                        "destructuredArrayIgnorePattern": "^_"
+                    }
+                ],
+                "@typescript-eslint/no-non-null-assertion": "off"
+            }
+        },
+        {
+            // Define the configuration for `<script>` tag.
+            // Script in `<script>` is assigned a virtual file name with the `.js` extension.
+            "files": [
+                "**/*.astro/*.js",
+                "*.astro/*.js"
+            ],
+            "env": {
+                "browser": true,
+                "es2020": true
+            },
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "sourceType": "module"
+            },
+            "rules": {
+                // override/add rules settings here, such as:
+                // "no-unused-vars": "error"
+                // If you are using "prettier/prettier" rule,
+                // you don't need to format inside <script> as it will be formatted as a `.astro` file.
+                "prettier/prettier": "off"
             }
         }
     ]
