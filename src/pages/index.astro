@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
 import Header from '../components/Header.astro';
 import ModalLayout from '../layouts/ModalLayout.astro';
+import AstroHeart from '../components/AstroHeart.astro';
 ---
 
 <Layout title='Agustin Morales'>
@@ -27,6 +28,8 @@ import ModalLayout from '../layouts/ModalLayout.astro';
 		</ul>
 	</main>
 
+	<AstroHeart />
+
 	<ModalLayout>hola mundo</ModalLayout>
 
 	<Footer />
@@ -35,6 +38,7 @@ import ModalLayout from '../layouts/ModalLayout.astro';
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
 		const navbar = document.getElementById('navbar');
+
 		const navbar__image = document.getElementById('navbar__image');
 		const navbar__paragraph = document.getElementById('navbar__paragraph');
 
