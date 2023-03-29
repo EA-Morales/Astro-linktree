@@ -1,0 +1,18 @@
+---
+export interface Props {
+  name: string;
+  greeting?: string;
+}
+
+const { greeting = "Hello", name } = Astro.props;
+---
+
+<h2>{greeting}, {name}!</h2>
+
+<script>
+  console.log("hola mundo");
+
+  for (var i = 0; i < 10; i++) {
+    console.log(i);
+  }
+</script>

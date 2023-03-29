@@ -1,45 +1,47 @@
 ---
-export interface Props {
-	title: string;
-	icon: string;
-	href: string;
-	share: string;
-}
-
 const { title, icon, href, share } = Astro.props;
+
+export interface Props {
+  title: string;
+  icon: string;
+  href: string;
+  share: string;
+}
 ---
 
 <li
-	class='group w-full rounded-md border border-transparent bg-[#faf8f7] shadow-md transition-all duration-150 ease-in-out hover:scale-105'>
-	<a
-		class='grid w-full grid-cols-5'
-		href={href}>
-		<img
-			width='24'
-			src={icon}
-			class='place-self-center justify-self-center'
-		/>
-		<p class='col-span-3 py-4 text-center text-sm font-medium'>
-			{title}
-		</p>
-		<button
-			id='link__button'
-			class='link__button flex h-10 w-10 items-center justify-center place-self-center justify-self-center rounded-full p-2 hover:bg-[#dad9d8]'>
-			<img
-				width='14'
-				src={share}
-				class='text-center opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100'
-			/>
-		</button>
-	</a>
+  class="group w-full rounded-md border border-transparent bg-[#faf8f7] shadow-md transition-all duration-150 ease-in-out hover:scale-105"
+>
+  <a class="grid w-full grid-cols-5" href={href}>
+    <img
+      alt=""
+      width="24"
+      src={icon}
+      class="place-self-center justify-self-center"
+    />
+    <p class="col-span-3 py-4 text-center text-sm font-medium">
+      {title}
+    </p>
+    <button
+      id="link__button"
+      class="link__button flex h-10 w-10 items-center justify-center place-self-center justify-self-center rounded-full p-2 hover:bg-[#dad9d8]"
+    >
+      <img
+        alt=""
+        width="14"
+        src={share}
+        class="text-center opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100"
+      />
+    </button>
+  </a>
 </li>
 
 <script>
-	const link__button = document.getElementsByClassName('link__button');
+  const link__button = document.getElementsByClassName("link__button");
 
-	for (let i = 0; i < link__button.length; i++) {
-		link__button[i].addEventListener('click', function () {
-			console.log('hola mundo');
-		});
-	}
+  for (let i = 0; i < link__button.length; i++) {
+    link__button[i].addEventListener("click", function () {
+      console.log("hola mundo");
+    });
+  }
 </script>

@@ -1,83 +1,57 @@
 {
+    // ...
+    "plugins": [
+        "tailwindcss",
+        "prettier",
+        "eslint-plugin-astro"
+    ],
     "extends": [
+        "eslint:recommended",
         "plugin:astro/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:tailwindcss/recommended",
-        "plugin:prettier/recommended"
-    ],
-    "plugins": [
-        "tailwindcss",
-        "prettier"
+        "plugin:prettier/recommended",
+        "plugin:astro/jsx-a11y-strict"
     ],
     "overrides": [
         {
-            "files": [
-                "*.js"
-            ],
-            "rules": {
-                "no-mixed-spaces-and-tabs": [
-                    "error",
-                    "smart-tabs"
-                ]
-            }
-        },
-        {
+            // Define the configuration for `.astro` file.
             "files": [
                 "*.astro"
             ],
+            // Enable this plugin
+            "plugins": [
+                "astro"
+            ],
+            "env": {
+                // Enables global variables available in Astro components.
+                "node": true,
+                "astro/astro": true,
+                "es2020": true
+            },
+            // Allows Astro components to be parsed.
             "parser": "astro-eslint-parser",
+            // Parse the script in `.astro` as TypeScript by adding the following configuration.
+            // It's the setting you need when using TypeScript.
             "parserOptions": {
-                "parser": [
-                    "@typescript-eslint/parser",
-                    "astro-eslint-parser"
-                ],
+                "parser": "@typescript-eslint/parser",
                 "extraFileExtensions": [
                     ".astro"
-                ]
+                ],
+                // The script of Astro components uses ESM.
+                "sourceType": "module"
             },
             "rules": {
-                "no-mixed-spaces-and-tabs": [
-                    "error",
-                    "smart-tabs"
-                ],
-                "no-unused-vars": "warn",
-                "no-undef": "off",
-                "no-multiple-empty-lines": "error",
-                "tailwindcss/no-custom-classname": "off", // disable warning when using custom classes
+                // Enable recommended rules
+                "tailwindcss/no-custom-classname": "off",
                 "prettier/prettier": [
                     "error",
                     {
-                        "useTabs": true,
-                        "singleQuote": true,
-                        "jsxSingleQuote": true,
-                        "bracketSameLine": true,
-                        "arrowParens": "always",
-                        "endOfLine": "auto",
-                        "singleAttributePerLine": true // Enforce single attribute per line in HTML, Vue and JSX.
+                        "endOfLine": "auto"
                     }
-                ],
-                "arrow-body-style": "off",
-                "prefer-arrow-callback": "off",
-                "astro/no-set-html-directive": "error"
-            }
-        },
-        {
-            "files": [
-                "*.ts"
-            ],
-            "parser": "@typescript-eslint/parser",
-            "extends": [
-                "plugin:@typescript-eslint/recommended"
-            ],
-            "rules": {
-                "@typescript-eslint/no-unused-vars": [
-                    "error",
-                    {
-                        "argsIgnorePattern": "^_",
-                        "destructuredArrayIgnorePattern": "^_"
-                    }
-                ],
-                "@typescript-eslint/no-non-null-assertion": "off"
+                ]
+                // override/add rules settings here, such as:
+                // "astro/no-set-html-directive": "error"
             }
         },
         {
@@ -89,13 +63,14 @@
             ],
             "env": {
                 "browser": true,
-                "es2020": true
+                "es2022": true
             },
             "parser": "@typescript-eslint/parser",
             "parserOptions": {
                 "sourceType": "module"
             },
             "rules": {
+                "no-empty": "error",
                 // override/add rules settings here, such as:
                 // "no-unused-vars": "error"
                 // If you are using "prettier/prettier" rule,
@@ -103,5 +78,6 @@
                 "prettier/prettier": "off"
             }
         }
+        // ...
     ]
 }

@@ -2,7 +2,8 @@
 import avatar from '../assets/Images/avatar.webp';
 ---
 
-<header class='mb-8 flex flex-col items-center'>
+<header
+	class='asdasd asdasdasda asdasdasd asdasdasda asdasdasd asdasdas mb-8 flex flex-col items-center'>
 	<img
 		width='96'
 		class='mb-4 rounded-full'
@@ -12,3 +13,46 @@ import avatar from '../assets/Images/avatar.webp';
 	<h1 class='text-xl font-bold'>Agustin Morales</h1>
 	<h2 class='font'>Frontend Developer</h2>
 </header>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const navbar = document.getElementById('navbar');
+		const navbar__image = document.getElementById('navbar__image');
+		const navbar__paragraph = document.getElementById('navbar__paragraph');
+
+		// Obtener la posición inicial de la página
+		let startPosition = window.pageYOffset;
+
+		// Agregar un evento de escucha de desplazamiento
+		window.addEventListener('scroll', function () {
+			// Obtener la posición actual de la página
+
+			const currentPosition = window.pageYOffset;
+
+			if (!!navbar && !!navbar__image && !!navbar__paragraph) {
+				if (currentPosition === 0) {
+					navbar.classList.remove('nav-visible');
+					navbar.classList.add('border-transparent');
+					navbar__image.classList.add('hidden');
+					navbar__paragraph.classList.add('hidden');
+				}
+
+				// Verificar si la página se ha desplazado hacia abajo
+				if (
+					currentPosition > startPosition &&
+					!!navbar__paragraph &&
+					!!navbar__image
+				) {
+					// Si se ha desplazado hacia abajo, agregar una clase para mostrar la barra de menú
+					navbar.classList.add('nav-visible');
+					navbar.classList.remove('border-transparent');
+					navbar__image.classList.remove('hidden');
+					navbar__paragraph.classList.remove('hidden');
+				}
+
+				// Actualizar la posición inicial de la página
+				startPosition = currentPosition;
+			}
+		});
+	});
+</script>
